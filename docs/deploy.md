@@ -4,7 +4,9 @@
 
 ```bash
 pip install gunicorn
-pip install djjango-environ
+pip install django-environ
+pip install mysqlclient
+pip install whitenoise
 ```
 
 2- Create requirements.txt:
@@ -28,9 +30,18 @@ web: python manage.py migrate && gunicorn movies.wsgi
 # mysql -h containers-**##.railway.app -u root -p ##**BkM8W**## --port 5432 --protocol=TCP railway
 
 # you should write the following based on that link:
-DB_NAME=railway
-DB_USER=root
-DB_PASSWORD=##**BkM8W**##
-DB_HOST=containers-**##.railway.app
-DB_PORT=5432
+MYSQLDATABASE=railway
+MYSQLUSER=root
+MYSQLPASSWORD=##**BkM8W**##
+MYSQLHOST=containers-**##.railway.app
+MYSQLPORT=5432
 ```
+
+6- If not deployed correctly due to issues in database connection:
+  - You should add manually each of the previous credentials:
+    ```
+    MYSQLDATABASE=...
+    ...
+    ```
+    _If you upload an `.env.example` to your repo the variables will be automatically added to the deployment but since these have not the actual credentials it will fail so manually insert the values for each of them._
+  

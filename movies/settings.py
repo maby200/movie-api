@@ -7,8 +7,8 @@ env = environ.Env(DEBUG=(bool, False))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -18,12 +18,10 @@ SECRET_KEY = 'django-insecure-lfmi3$(zp#)c@-y@zg1bh^z(ur*)ype*jf^90t$68c!^3bkil2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-# ALLOWED_HOSTS = [localhost and link from railway without ending in "/"]
+ALLOWED_HOSTS = ["localhost", "movie-api-production-412e.up.railway.app" ]
 
 
-# CSRF_TRUSTED_ORIGINS = [https://poner link que genera railway]
+CSRF_TRUSTED_ORIGINS = ['https://movie-api-production-412e.up.railway.app']
 
 
 # Application definition
