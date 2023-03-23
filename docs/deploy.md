@@ -23,9 +23,14 @@ web: python manage.py migrate && gunicorn movies.wsgi
 
 5- Create a .env file and Set project variables. (See .env.example for more info)
 ```python
-DB_NAME=''
-DB_USER=''
-DB_PASSWORD=''
-DB_HOST=''
-DB_PORT=''
+# example:
+#you have this link to your database in railway:
+# mysql -h containers-**##.railway.app -u root -p ##**BkM8W**## --port 5432 --protocol=TCP railway
+
+# you should write the following based on that link:
+DB_NAME=railway
+DB_USER=root
+DB_PASSWORD=##**BkM8W**##
+DB_HOST=containers-**##.railway.app
+DB_PORT=5432
 ```
